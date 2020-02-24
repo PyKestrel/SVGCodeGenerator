@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> SVG Maker </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500|Open+Sans:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="svgGenerator.css">
+    <script src="svgGenerator.js"></script>
+</head>
+<body class="background">
+    <h1 class="headertext"> SVG Maker </h1>
+    <h2 class="headertext"> Designed By Ariel Torres </h2>
+    <br><br><br>
+    <form id="svgForm"onsubmit="return false">
+        <div class="flex">
+        <div class="card">
+        <div class="menucard">
+        <label for="svgShape" style="margin-top: 10px;"> Choose Shape </label><br>
+        <select name="svgShape" id="svgShape" onchange="updatePage()" class="field">
+            <option value="rectangle"> Rectangle </option>
+            <option value="circle"> Circle </option>
+            <option value="ellipse"> Ellipse </option> 
+            <!-- <option value="line"> Line </option>
+            <option value="polygon"> Polygon </option>
+            <option value="polyline"> Polyline </option> -->
+        </select>
+        <br><br>
+        <fieldset id="default">
+        <label for="input1"> Height </label><br>
+        <input type="text" id="input1" placeholder="100px" class="field"><br><br>
+        <label for="input2"> Width </label><br>
+        <input type="text" id="input2" placeholder="200px" class="field"><br><br>
+        </fieldset>
+        
+        <fieldset id="fieldset">
+        <label for="input3"> Color </label><br>
+        <input type="text" id="input3" placeholder="Ex: #FF6593" class="field"><br><br>
+        </fieldset>
+        
+
+        <fieldset id="circle" style="display:none;">
+        <label for="radius"> Radius </label><br>
+        <input type="text" id="radius" placeholder="Ex: 50px" class="field"><br><br>
+        <label for="x"> X Center </label><br>
+        <input type="text" id="x" placeholder="X Coord On Screen Ex: 20" class="field"><br><br>
+        <label for="y"> Y Center </label><br>
+        <input type="text" id="y" placeholder="Y Coord On Screen Ex: 20" class="field"><br><br>
+        <label for="color"> Color </label><br>
+        <input type="text" id="color" placeholder="Ex: #FF6593" class="field"><br><br>
+        </fieldset>
+
+        <fieldset id="ellipse" style="display:none;">
+            <label for="ex"> X Center </label><br>
+            <input type="text" id="ex" placeholder="X Coord On Screen Ex: 20" class="field"><br><br>
+            <label for="ey"> Y Center </label><br>
+            <input type="text" id="ey" placeholder="Y Coord On Screen Ex: 20" class="field"><br><br>
+            <label for="eXradius"> X Radius </label><br>
+            <input type="text" id="eXradius" placeholder="Radius On X Axis Ex: 50px" class="field"><br><br>
+            <label for="eYradius"> Y Radius </label><br>
+            <input type="text" id="eYradius"  placeholder="Radius On X Axis Ex: 50px" class="field"><br><br>
+            <label for="eColor"> Color </label><br>
+            <input type="text" id="eColor" placeholder="Ex: #FF6593" class="field"><br><br>
+        </fieldset>
+    <div style="display: flex; justify-content: center;">
+    <button type="button" onclick="calCode();" class="field" style="margin-bottom: 5%; width:100px; font-family: Montserrat;"> Get Code </button>
+    </div>
+
+
+    </div>
+    
+
+    </div>
+    <div class="card" style="height: 25%; width:25%; border-radius: 30px;">
+        <label for="output" style="display: flex; justify-content: center;">Output</label>
+    <textarea id="output" style="display:block; float: right; min-height: 400px; border-radius: 30px; border: 0px;" readonly></textarea>
+    <div style="display: flex; justify-content: center;">
+    <button type="button" id="copy" onclick="copyClip()" class="field" style="display:none; width: 100px; margin-bottom: 5%;"> Copy </button>
+    </div>
+    </div>
+    </div>
+    </form>
+
+
+</body>
+</html>
